@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<table>
+			<thead>
+				<td>Query</td>
+				<td>Recall</td>
+				<td>Precision</td>
+				<td>Non-interpolated Precision</td>
+			</thead>
+			<tbody>
+				<% for(var i = 0; i < result.length; i++) { %>
+					<tr>
+						<td><%= i + 1 %></td>
+						<td><%= result[i].recall %></td>
+						<td><%= result[i].precision %></td>
+						<td><%= result[i].nip %></td>
+					</tr>
+				<% } %>
+			</tbody>
+		</table>
+	</body>
+</html>

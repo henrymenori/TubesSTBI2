@@ -31,10 +31,10 @@
 
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="/home">Home</a></li>
-								<li><a href="/experimental">Experimental</a></li>
-								<li><a href="/interactive">Interactive</a></li>
-								<li><a href="/help">Help</a></li>
+								<li><a href="#">Home</a></li>
+								<li><a href="#">Experimental</a></li>
+								<li><a href="#">Interactive</a></li>
+								<li><a href="#">Help</a></li>
 							</ul>
 						</div><!-- /.navbar-collapse -->
 					</div><!-- /.container-fluid -->
@@ -46,134 +46,113 @@
 			</div>
 			
 			<div id="content">
-				<form action="/inverting" method="post" class="form-horizontal">
-					<!-- Document Location -->
+				<form class="form-horizontal">
+					<!-- Query Location -->
 					<div class="form-group">
-						<label class="col-sm-5 control-label">Document Location</label>
+						<label class="col-sm-5 control-label">Query</label>
 						<div class="col-sm-3">
-							<input type="text" class="form-control" name="documentLocation" placeholder="File URL">
-						</div>
-					</div>
-					
-					<!-- Stopword Location -->
-					<div class="form-group">
-						<label class="col-sm-5 control-label">Stopword Location</label>
-						<div class="col-sm-3">
-							<input type="text" class="form-control" name="stopwordLocation" placeholder="File URL">
+							<input type="text" class="form-control" placeholder="materi STBI computer science">
 						</div>
 					</div>
 					
 					<!-- Radio button -->
 					<br>
 					<div class="row">
-						<!-- Documents -->
 						<div class="col-md-6">
-							<label class="col-md-offset-7 col-md-6">TF</label>
-							<!-- No TF -->
+							<!-- Algoritma -->
+							<label class="col-md-offset-7 col-md-6">Algoritma</label>
+							<!-- Rocchio -->
 							<br>
-							<div class="radio">
+							<div class="radio" id="Algoritma-Rocchio">
 								<label class="col-md-offset-7 col-md-6">
-									<input type="radio" name="TF" id="TF1" value="option1" checked>
-									No TF
+									<input type="radio" name="A" id="A1" value="option1" checked>
+									Rocchio
 								</label>
 							</div>
 							
-							<!-- Raw TF -->
+							<!-- Ide reguler -->
 							<div class="radio">
 								<label class="col-md-offset-7 col-md-6">
-									<input type="radio" name="TF" id="TF2" value="option2">
-									Raw TF
+									<input type="radio" name="A" id="A2" value="option2">
+									Ide reguler
 								</label>
 							</div>
 							
-							<!-- Binary TF -->
+							<!-- Dec hi -->
 							<div class="radio">
 								<label class="col-md-offset-7 col-md-6">
-									<input type="radio" name="TF" id="TF3" value="option3">
-									Binary TF
+									<input type="radio" name="A" id="A3" value="option3">
+									Dec hi
 								</label>
 							</div>
 							
-							<!-- Augmented TF -->
-							<div class="radio">
+							<!-- Pseudo Relevance Feedback -->
+							<div class="radio" id="Algoritma-Pseudo">
 								<label class="col-md-offset-7 col-md-6">
-									<input type="radio" name="TF" id="TF4" value="option4">
-									Augmented TF
+									<input type="radio" name="A" id="A4" value="option4">
+									Pseudo Relevance Feedback
 								</label>
 							</div>
 							
-							<!-- Logarithmic TF -->
-							<div class="radio">
-								<label class="col-md-offset-7 col-md-6">
-									<input type="radio" name="TF" id="TF5" value="option5">
-									Logarithmic TF
-								</label>
-							</div>
-							
-							<!-- IDF -->
+							<!-- Top S Document -->
 							<br>
-							<label class="col-md-offset-7 col-md-6">
-								IDF
-							</label>
-							<!-- No IDF -->
-							<br>							
-							<div class="radio">
-								<label class="col-md-offset-7 col-md-6">
-									<input type="radio" name="IDF" id="IDF1" value="option1" checked>
-									No IDF
-								</label>
+							<div class="form-group" id="toggle-hidden-Top-S">
+								<label class="col-sm-7 control-label">Top S</label>
+								<div class="col-sm-2">
+									<input type="text" class="form-control">
+								</div>
 							</div>
 							
-							<!-- Using IDF -->
-							<div class="radio">
-								<label class="col-md-offset-7 col-md-6">
-									<input type="radio" name="IDF" id="IDF2" value="option2">
-									Using IDF
-								</label>
+							<!-- Top N Document -->
+							<div class="form-group" id="toggle-hidden-Top-N">
+								<label class="col-sm-7 control-label">Top N</label>
+								<div class="col-sm-2">
+									<input type="text" class="form-control">
+								</div>
 							</div>
 						</div>
 						
 						<div class="col-md-6">
-							<!-- Normalization -->
+							<!-- Same Document? -->
 							<label class="col-md-offset-3 col-md-6">
-								Normalization
+								Use Same Document?
 							</label>
-							<!-- No normalization -->
+							<!-- Use Same Document -->
+							<br>							
+							<div class="radio">
+								<label class="col-md-offset-3 col-md-6">
+									<input type="radio" name="USD" id="USD1" value="option1" checked>
+									Yes
+								</label>
+							</div>
+							
+							<!-- Don't Use Same Document -->
+							<div class="radio">
+								<label class="col-md-offset-3 col-md-6">
+									<input type="radio" name="USD" id="USD2" value="option2">
+									No
+								</label>
+							</div>
+							
+							<!-- Query Expansion? -->
 							<br>
-							<div class="radio">
-								<label class="col-md-offset-3 col-md-6">
-									<input type="radio" name="Normalization" id="Normalization1" value="option1" checked>
-									No normalization
-								</label>
-							</div>
-							
-							<!-- Using normalization -->
-							<div class="radio">
-								<label class="col-md-offset-3 col-md-6">
-									<input type="radio" name="Normalization" id="Normalization2" value="option2">
-									Using normalization
-								</label>
-							</div>
-							
-							<!-- Stemming -->
-							<br><br>
 							<label class="col-md-offset-3 col-md-6">
-								Stemming
+								Use Query Expansion?
 							</label>
-							<!-- No stemming -->
-							<br>
+							<!-- Use Same Document -->
+							<br>							
 							<div class="radio">
 								<label class="col-md-offset-3 col-md-6">
-									<input type="radio" name="Stemming" id="Stemming1" value="option1" checked>
-									No stemming
+									<input type="radio" name="UQE" id="UQE1" value="option1" checked>
+									Yes
 								</label>
 							</div>
 							
-							<!-- Using stemming -->
+							<!-- Don't Use Same Document -->
 							<div class="radio">
 								<label class="col-md-offset-3 col-md-6">
-									<input type="radio" name="Stemming" id="Stemming2" value="option2">
-									Using stemming
+									<input type="radio" name="UQE" id="UQE2" value="option2">
+									No
 								</label>
 							</div>
 							
@@ -190,4 +169,17 @@
 			</div>
 		</div>
 	</body>
+	
+	<!-- Script -->
+	 <script>
+		$("#Algoritma-Rocchio").click(function () {
+			$("#toggle-hidden-Top-S").css("display", "block");
+			$("#toggle-hidden-Top-N").css("display", "none");
+		});
+		
+		$("#Algoritma-Pseudo").click(function () {
+			$("#toggle-hidden-Top-S").css("display", "none");
+			$("#toggle-hidden-Top-N").css("display", "block");
+		});
+	</script>
 </html>
