@@ -9,14 +9,15 @@ router.get('/home', function(req, res) {
 });
 
 router.post('/inverting', function(req, res) {
-	collection.createInvertedFile(
-		req.body.documentLocation,
-		req.body.stopwordLocation,
-		req.body.TF,
-		req.body.IDF,
-		req.body.Normalization,
-		req.body.Stemming
-	);
+	// collection.createInvertedFile(
+	// 	req.body.documentLocation,
+	// 	req.body.stopwordLocation,
+	// 	req.body.TF,
+	// 	req.body.IDF,
+	// 	req.body.Normalization,
+	// 	req.body.Stemming
+	// );
+	collection.loadDocuments(req.body.documentLocation);
 	res.redirect('/home');
 });
 
