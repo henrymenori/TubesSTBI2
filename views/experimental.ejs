@@ -79,7 +79,7 @@
 							</div>
 							
 							<!-- Ide reguler -->
-							<div class="radio">
+							<div class="radio" id="Algoritma-Ide">
 								<label class="col-md-offset-7 col-md-6">
 									<input type="radio" name="A" id="A2" value="option2">
 									Ide reguler
@@ -87,7 +87,7 @@
 							</div>
 							
 							<!-- Dec hi -->
-							<div class="radio">
+							<div class="radio" id="Algoritma-Dec">
 								<label class="col-md-offset-7 col-md-6">
 									<input type="radio" name="A" id="A3" value="option3">
 									Dec hi
@@ -107,7 +107,7 @@
 							<div class="form-group" id="toggle-hidden-Top-S">
 								<label class="col-sm-7 control-label">Top S</label>
 								<div class="col-sm-2">
-									<input type="text" class="form-control">
+									<input type="number" name="tops" class="form-control">
 								</div>
 							</div>
 							
@@ -115,7 +115,7 @@
 							<div class="form-group" id="toggle-hidden-Top-N">
 								<label class="col-sm-7 control-label">Top N</label>
 								<div class="col-sm-2">
-									<input type="text" class="form-control">
+									<input type="number" name="topn" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -185,8 +185,18 @@
 			$("#toggle-hidden-Top-N").css("display", "none");
 		});
 		
+		$("#Algoritma-Ide").click(function () {
+			$("#toggle-hidden-Top-S").css("display", "block");
+			$("#toggle-hidden-Top-N").css("display", "none");
+		});
+		
+		$("#Algoritma-Dec").click(function () {
+			$("#toggle-hidden-Top-S").css("display", "block");
+			$("#toggle-hidden-Top-N").css("display", "none");
+		});
+		
 		$("#Algoritma-Pseudo").click(function () {
-			$("#toggle-hidden-Top-S").css("display", "none");
+			$("#toggle-hidden-Top-S").css("display", "block");
 			$("#toggle-hidden-Top-N").css("display", "block");
 		});
 	</script>

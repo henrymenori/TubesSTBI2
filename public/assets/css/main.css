@@ -8,10 +8,10 @@
 }
 
 .table-text-center th, .table-text-center td {
-    text-align: center;
+	text-align: center;
 }
 
-#toggle-hidden-Top-S{
+#toggle-hidden-Top-S {
 	display: block;
 }
 
