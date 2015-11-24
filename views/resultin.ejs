@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<form action="/runin2" method="post">
+			<table>
+				<thead>
+					<td>No</td>
+					<td>Document</td>
+					<td>Relevant?</td>
+				</thead>
+				<tbody>
+					<% for(var i = 0; i < result.length; i++) { %>
+						<tr>
+							<td><%= i + 1 %></td>
+							<td>
+								<h4><%= result[i].title %></h4>
+								<%= result[i].words %>
+							</td>
+							<td>
+								<input type="checkbox" name="relevant" value="<%= result[i].nodoc %>">
+							</td>
+						</tr>
+					<% } %>
+				</tbody>
+			</table>
+			<button type="submit">Submit</button>
+		</form>
+		</br>
+		</br>
+		</br>
+	</body>
+</html>

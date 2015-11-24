@@ -38,6 +38,17 @@ router.get('/interactive', function(req, res) {
 	res.render('interactive');
 });
 
+router.post('/runin', function(req, res) {
+	var result = collection.interactive(req.body.query);
+	res.render('resultin', {
+		result : result
+	});
+});
+
+router.post('/runin2', function(req, res) {
+	console.log(req.body);
+});
+
 router.get('/help', function(req, res) {
 	res.render('help');
 });
