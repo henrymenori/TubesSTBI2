@@ -31,10 +31,10 @@
 
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">Experimental</a></li>
-							<li><a href="#">Interactive</a></li>
-							<li><a href="#">Help</a></li>
+							<li><a href="/home">Home</a></li>
+							<li><a href="/experimental">Experimental</a></li>
+							<li><a href="/interactive">Interactive</a></li>
+							<li><a href="/help">Help</a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</div><!-- /.container-fluid -->
