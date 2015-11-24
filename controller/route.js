@@ -27,7 +27,8 @@ router.get('/experimental', function(req, res) {
 router.post('/runex', function(req, res) {
 	var result = collection.experimental(
 		req.body.queryLocation,
-		req.body.relevanceLocation
+		req.body.relevanceLocation,
+		20
 	);
 	res.render('resultex', {
 		result : result
