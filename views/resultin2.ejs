@@ -50,14 +50,8 @@
 			<div>
 				<br>
 				<center>
-					<h3>Old Query</h3>
-					<h5>Test</h5>
-				</center>
-				
-				<br>
-				<center>
-					<h3>New Query</h3>
-					<h5>Test</h5>
+					<h3>Query</h3>
+					<h5><%= query %></h5>
 				</center>
 			</div>
 						
@@ -71,10 +65,12 @@
 							<th>Word(s)</th>
 							<th>Weight</th>
 						</tr>
-						<tr>
-							<td>Test</td>
-							<td>Test</td>
-						</tr>
+						<% for(var key in result.old.inverted) { %>
+							<tr>
+								<td><%= key %></td>
+								<td><%= result.old.inverted[key] %></td>
+							</tr>
+						<% } %>
 					</table>
 				</div>
 				
@@ -85,10 +81,12 @@
 							<th>Word(s)</th>
 							<th>Weight</th>
 						</tr>
-						<tr>
-							<td>Test</td>
-							<td>Test</td>
-						</tr>
+						<% for(var key in result.change.inverted) { %>
+							<tr>
+								<td><%= key %></td>
+								<td><%= result.change.inverted[key] %></td>
+							</tr>
+						<% } %>
 					</table>
 				</div>
 			</div>
@@ -102,11 +100,13 @@
 							<th>Document ID</th>
 							<th>Similarity</th>
 						</tr>
-						<tr>
-							<td>Test</td>
-							<td>Test</td>
-							<td>Test</td>
-						</tr>
+						<% for(var i = 0; i < result.old.result.length; i++) { %>
+							<tr>
+								<td><%= i + 1 %></td>
+								<td><%= result.old.result[i].nodoc %></td>
+								<td><%= result.old.result[i].value %></td>
+							</tr>
+						<% } %>
 					</table>
 				</div>
 				
@@ -119,9 +119,13 @@
 							<th>Similarity</th>
 						</tr>
 						<tr>
-							<td>Test</td>
-							<td>Test</td>
-							<td>Test</td>
+							<% for(var i = 0; i < result.change.result.length; i++) { %>
+							<tr>
+								<td><%= i + 1 %></td>
+								<td><%= result.change.result[i].nodoc %></td>
+								<td><%= result.change.result[i].value %></td>
+							</tr>
+						<% } %>
 						</tr>
 					</table>
 				</div>

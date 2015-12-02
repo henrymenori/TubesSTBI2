@@ -4,6 +4,14 @@ var Collection = require('../lib/Collection');
 var router = express.Router();
 var collection = new Collection();
 
+var result;
+var query;
+var a;
+var tops;
+var topn;
+var usd;
+var uqe;
+
 router.get('/home', function(req, res) {
 	res.render('home');
 });
@@ -44,14 +52,25 @@ router.get('/interactive', function(req, res) {
 });
 
 router.post('/runin', function(req, res) {
-	var result = collection.interactive(req.body.query);
+	query = req.body.query;
+	a = req.body.A;
+	tops = req.body.tops;
+	topn = req.body.topn;
+	usd = req.body.USD;
+	uqe = req.body.UQE;
+	result = collection.interactive(query, tops);
 	res.render('resultin', {
 		result : result
 	});
+	console.log(req.body);
 });
 
 router.post('/runin2', function(req, res) {
-	console.log(req.body);
+	result = collection.interactive2(query, req.body.relevant, a, tops, topn, usd, uqe);
+	res.render('resultin2', {
+		query : query,
+		result : result
+	});
 });
 
 router.get('/help', function(req, res) {
