@@ -30,7 +30,9 @@ router.post('/runex', function(req, res) {
 		req.body.relevanceLocation,
 		req.body.A,
 		req.body.tops,
-		req.body.topn
+		req.body.topn,
+		req.body.USD,
+		req.body.UQE
 	);
 	res.render('resultex', {
 		result : result
